@@ -35,8 +35,10 @@ def check_guess(guess, secret):
 
     try:
         if guess > secret:
+            #FIX: Logic breaks here
             return "Too High", "📈 Go HIGHER!"
         else:
+            #FIX: Logic breaks here
             return "Too Low", "📉 Go LOWER!"
     except TypeError:
         g = str(guess)
@@ -132,6 +134,7 @@ with col3:
     show_hint = st.checkbox("Show hint", value=True)
 
 if new_game:
+    #FIX: Logic break here
     st.session_state.attempts = 0
     st.session_state.secret = random.randint(1, 100)
     st.success("New game started.")
