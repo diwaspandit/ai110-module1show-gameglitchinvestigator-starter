@@ -5,8 +5,13 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 ## 1. What was broken when you started?
 
 - What did the game look like the first time you ran it?
+=> It showed the enter the guess text box to enter the number to guess.
+
 - List at least two concrete bugs you noticed at the start  
   (for example: "the secret number kept changing" or "the hints were backwards").
+  => First, show hint show backwards, like: if it is higher, it shows lower; if it is lower, it shows higher. It should perform opposite.
+   Second, the new game doesnot start when clicked new game. It should reset and start new game when new game button is clicked.
+   Third, when difficulty level changed, the secret key doesnot follow the range rule. Based on the range selected, it should show the secret number range.
 
 ---
 
