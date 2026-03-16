@@ -40,8 +40,11 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 ## 4. What did you learn about Streamlit and state?
 
 - In your own words, explain why the secret number kept changing in the original app.
+=> The secret number kept changing because the app was generating it in normal script flow, and Streamlit reruns the whole script on every interaction. 
 - How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
+=> I’d explain it like this: in Streamlit, every click or input change causes the app script to run again from top to bottom. st.session_state is like a small memory box for each user session that survives those reruns. 
 - What change did you make that finally gave the game a stable secret number?
+=> The key fix was moving the secret number into st.session_state and only initializing it once (instead of recreating it on every rerun).
 
 ---
 
@@ -49,5 +52,8 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 
 - What is one habit or strategy from this project that you want to reuse in future labs or projects?
   - This could be a testing habit, a prompting strategy, or a way you used Git.
+=> One habit I want to reuse is writing targeted regression tests right after I fix a bug. In this project, I did not only test the outcome (Too High/Too Low) but also the hint text (LOWER/HIGHER), which made the fix more reliable.
 - What is one thing you would do differently next time you work with AI on a coding task?
+=> One thing I would do differently next time is validate each AI suggestion immediately in my exact local environment before moving on. In this project, a suggestion sounded correct but failed under my default interpreter, which cost time. Going forward, I will ask AI for a quick verification checklist (commands + expected output) for every fix so I can confirm it right away.
 - In one or two sentences, describe how this project changed the way you think about AI generated code.
+=> This project changed my view of AI-generated code from “ready to use” to “helpful first draft.” I now treat AI suggestions as starting points that must be verified with tests and real runs in my local environment before trusting them.
